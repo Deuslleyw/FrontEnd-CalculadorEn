@@ -1,1 +1,8 @@
-<p>resultado works!</p>
+<div class="container text-center p-4">
+  <h1 class="mb-4">Resultado da Simulação</h1>
+  <p *ngIf="resultado">
+    Valor de emergia calculado: <strong>{{ resultado}}</strong>
+  </p>
+  <a routerLink="/simulacao" class="btn btn-secundary mt-3">Nova Simulação</a>
+  <a routerLink="/" class="btn btn-secundary mt-3">Voltar para a introdução</a>
+</div>
