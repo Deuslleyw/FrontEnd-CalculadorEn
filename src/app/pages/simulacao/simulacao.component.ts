@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CalculadoraService } from '../../services/calculadora.service';
 import { RouterModule, Router } from '@angular/router';
+import { CalculadoraService } from '../../services/calculadora.service';
 
 @Component({
   selector: 'app-simulacao',
@@ -24,9 +24,14 @@ export class SimulacaoComponent {
   ) {}
 
   calcularEmergia() {
-    this.calculadoraService.calcularEmergia(this.simulacao).subscribe(result => {
-      localStorage.setItem('resultado', result.resultado);
-      this.router.navigate(['/resultado']);
-    });
+    this.calculadoraService.calcularEmergia(this.simulacao).subscribe(
+      (result) => {
+        localStorage.setItem('resultado', result.toString());
+        this.router.navigate(['/resultado']);
+      },
+      (error) => {
+        console.error('Erro ao calcular emergia:', error);
+      }
+    );
   }
 }

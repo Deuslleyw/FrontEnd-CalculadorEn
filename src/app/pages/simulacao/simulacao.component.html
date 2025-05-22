@@ -1,1 +1,25 @@
-<p>simulacao works!</p>
+<div class="container p-4">
+  <h1 class="mb-4">Simulação de Emergía</h1>
+
+  <form (ngSubmit)="calcularEmergia()">
+    <div class="mb-3">
+      <label for="consumoEnergetico" class="form-label">Consumo Energético (MJ)</label>
+      <input type="number" id="consumoEnergetico" class="form-control"
+        [(ngModel)]="simulacao.consumoEnergetico" name="consumoEnergetico" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="quantidadeMaterial" class="form-label">Quantidade de Material (kg)</label>
+      <input type="number" id="quantidadeMaterial" class="form-control"
+        [(ngModel)]="simulacao.quantidadeMaterial" name="quantidadeMaterial" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="distanciaTransporte" class="form-label">Distância de Transporte (km)</label>
+      <input type="number" id="distanciaTransporte" class="form-control"
+        [(ngModel)]="simulacao.distanciaTransporte" name="distanciaTransporte" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calcular Emergía</button>
+  </form>
+</div>
