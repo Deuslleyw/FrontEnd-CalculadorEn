@@ -14,7 +14,7 @@ import { RouterModule, Router } from '@angular/router';
         Esta aplicação permite simular o valor de emergia aplicado à cadeia produtiva do papel, considerando
         consumo energético, materiais e transporte. Insira os dados e descubra o impacto energético!
       </p>
-      <button (click)="iniciarSimulacao()">Iniciar Simulação</button>
+
     </div>
   `,
   styles: [`
