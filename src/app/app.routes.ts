@@ -7,4 +7,5 @@ export const routes: Routes = [
   { path: '', component: IntroducaoComponent },
   { path: 'simulacao', component: SimulacaoComponent },
   { path: 'resultado', component: ResultadoComponent },
+  { path: '**', redirectTo: '' }
 ];

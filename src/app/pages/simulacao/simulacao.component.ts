@@ -24,14 +24,16 @@ export class SimulacaoComponent {
   ) {}
 
   calcularEmergia() {
-    this.calculadoraService.calcularEmergia(this.simulacao).subscribe(
-      (result) => {
-        localStorage.setItem('resultado', result.toString());
-        this.router.navigate(['/resultado']);
-      },
-      (error) => {
-        console.error('Erro ao calcular emergia:', error);
-      }
-    );
-  }
+  this.calculadoraService.calcularEmergia(this.simulacao).subscribe(
+    (result) => {
+      localStorage.setItem('resultado', result.toString());
+      localStorage.setItem('simulacao', JSON.stringify(this.simulacao));
+      this.router.navigate(['/resultado']);
+    },
+    (error) => {
+      console.error('Erro ao calcular emergia:', error);
+    }
+  );
 }
+
+  }

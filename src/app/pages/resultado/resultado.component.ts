@@ -16,4 +16,25 @@ export class ResultadoComponent {
     this.resultado = localStorage.getItem('resultado');
   }
 
+  baixarRelatorio() {
+  const simulacao = localStorage.getItem('simulacao');
+  if (simulacao) {
+    fetch('http://localhost:8080/api/v1/relatorio', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: simulacao
+    })
+    .then(response => response.blob())
+    .then(blob => {
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'relatorio.pdf';
+      a.click();
+      window.URL.revokeObjectURL(url);
+    });
+  }
+}
+
+
 }
