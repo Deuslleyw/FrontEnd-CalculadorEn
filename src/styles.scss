@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+header {
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #2e7d32;
+  color: #fff;
+  text-align: center;
+  padding: 0.8rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 5rem auto 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+h1, h2 {
+  color: #2e7d32;
+}
+
+button, .btn {
+  background-color: #43a047;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+  background-color: #388e3c;
+}
+
+a {
+  text-decoration: none;
+  color: #43a047;
+}
+
+a:hover {
+  text-decoration: underline;
+}
