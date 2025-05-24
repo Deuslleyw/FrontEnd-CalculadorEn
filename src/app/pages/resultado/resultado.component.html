@@ -1,10 +1,34 @@
 <div class="container text-center p-4">
   <h1 class="mb-4">Resultado da Simulação</h1>
-  <p *ngIf="resultado">
-    Valor de emergia calculado: <strong>{{ resultado}}</strong>
-  </p>
-  <a routerLink="/simulacao" class="btn btn-secundary mt-3">Nova Simulação</a>
-  <a routerLink="/" class="btn btn-secundary mt-3">Voltar para a introdução</a>
-  <button (click)="baixarRelatorio()">Baixar Relatório PDF</button>
 
+  <p *ngIf="resultado">
+    Valor de emergia calculado:
+    <strong class="text-primary">{{ resultado | number:'1.0-2' }}</strong>
+  </p>
+
+  <!-- Gráfico -->
+  <ngx-charts-bar-vertical
+    [results]="chartData"
+    [view]="view"
+    [scheme]="colorScheme"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [roundDomains]="true">
+  </ngx-charts-bar-vertical>
+
+
+  <!-- Botões -->
+  <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+    <a routerLink="/simulacao" class="btn btn-outline-primary">
+      <i class="bi bi-arrow-clockwise"></i> Nova Simulação
+    </a>
+      <button (click)="baixarRelatorio()" class="btn btn-warning">
+      <i class="bi bi-file-earmark-pdf"></i> Baixar Relatório PDF
+    </button>
+  </div>
 </div>
