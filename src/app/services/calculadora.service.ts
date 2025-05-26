@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CalculadoraService {
-  private apiUrl = 'http://localhost:8080/api/v1/calcular';
+  private apiUrl = 'https://api-calculadora-emergia.onrender.com/api/v1/calcular';
 
   constructor(private http: HttpClient) {}
 
@@ -12,3 +12,6 @@ export class CalculadoraService {
     return this.http.post<any>(this.apiUrl, dados);
   }
 }
+
+
+
