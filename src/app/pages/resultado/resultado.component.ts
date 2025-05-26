@@ -46,7 +46,7 @@ export class ResultadoComponent implements OnInit {
   baixarRelatorio() {
     const simulacao = localStorage.getItem('simulacao');
     if (simulacao) {
-      fetch('http://localhost:8080/api/v1/relatorio', {
+      fetch('https://api-calculadora-emergia.onrender.com/api/v1/relatorio', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: simulacao
